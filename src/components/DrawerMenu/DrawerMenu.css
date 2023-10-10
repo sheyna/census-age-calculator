@@ -1,0 +1,18 @@
+
+.drawer-box {
+  padding: 1rem;
+  position: relative
+}
+
+.drawer-box button{
+  margin-left: 1rem;
+}
+
+.close-btn {
+  font-size: 2rem;
+  right: 1rem;
+  top: 1rem;
+  position: absolute;
+  cursor: pointer;
+  text-align: right;
+}
