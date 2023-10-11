@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-// import { Dayjs } from 'dayjs';
 import dayjs from 'dayjs';
 
 // other components
@@ -26,9 +25,7 @@ function App() {
 
   const [ resultsView, setResultsView ] = useState({
     display: false,
-    // btnText: 'Find Age',
     results: [],
-    // btnVariant: 'contained',
     dateWritten: ''
   });
 
@@ -85,8 +82,6 @@ function App() {
           by comparing their ages at census dates.<br/>
           Enter an approximate birthdate to start</p>
         <DrawerMenu
-          // data={censusOptions}
-          // setCensusOptions={setCensusOptions}
           openDrawerBtnText="Customize Census list"
         >
           <CensusMenu
@@ -112,22 +107,12 @@ function App() {
             label='Approx Birth Date'
             disableFuture
             views={['day', 'month', 'year']}
-            // onYearChange={() => setDisplayBtn(true)}
             onChange={(newValue) => {
               if (!Number.isNaN(newValue.year())){
                   setBirthDate(newValue);
               }
             }}
           />
-
-          {/* {displayBtn && (
-            <Button
-              variant={resultsView.btnVariant}
-              // onClick={handleUpdateCensusListResults}
-            >
-              {resultsView.btnText}
-            </Button>
-          )} */}
         </form>
         {resultsView.display && (
           <>
